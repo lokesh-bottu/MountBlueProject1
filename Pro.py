@@ -50,3 +50,10 @@ for k in line:
         dic[siva[i]].append(lokesh[i])
 #dictionary is created with all headings as keys and columns as values
 print(dic["dl_applied"])
+
+
+
+
+
+# for i in str:
+#     freq[i]=freq.get(i,0)+1
