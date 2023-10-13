@@ -3,6 +3,7 @@ from collections import defaultdict
 file = open("matches.csv")
 delivery = csv.DictReader(file)
 
+
 runs = {}
 runs["2016"] = {}
 for match in delivery:
