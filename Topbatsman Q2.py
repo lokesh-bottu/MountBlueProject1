@@ -5,15 +5,20 @@ file = open("Deliveries.csv")
 delivery = csv.DictReader(file)
 cnt = 1
 batsman_score = {}
+#check for the RCB team first then get the total runs scored by each player 
+
 for ball in delivery:
     if(ball["batting_team"] == "Royal Challengers Bangalore"):
         batsman_score[ball["batsman"]] = batsman_score.get(ball["batsman"],0) + int(ball["total_runs"])
 
 
+
+#after the score is calculated for each player then sort them by values
 sorted_top_batsman= dict(sorted(batsman_score.items(), key=lambda item:item[1],reverse=True))
 top10 = {}
 cnt = 1
 
+#after sorting now get the top 10 batsman by running a loop
 for i in sorted_top_batsman:
     top10[i] = sorted_top_batsman[i]
     if cnt == 10:

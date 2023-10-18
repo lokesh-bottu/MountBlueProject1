@@ -9,7 +9,12 @@ for match in delivery:
     year = match["season"]
     team1 = match["team1"]
     team2 = match["team2"]
-
+    #To calcuated the no of games played by each team we need to increment for both the batting team and bowling team.
+    #so firstly we will check for year if its present then we will check for each year in that particular year
+    #otherwise create an empty dic with that year and add values to it
+    #simulatanously do the same thing for both the teams.
+    
+    
     if year not in teams:
         teams[year] = {}
     yearkeys = list(teams[year].keys())
@@ -50,4 +55,4 @@ plt.show()
 
 
 
-
+ 

@@ -4,6 +4,10 @@ import matplotlib.pyplot as plt
 file = open("matches.csv")
 delivery = csv.DictReader(file)
 first = 0
+
+#firstly get the starting id and ending id of the mathes played in year 2015.
+
+
 for game in delivery:
     if str(game["season"]) == "2015":
         if(first == 0):
@@ -12,7 +16,7 @@ for game in delivery:
             first = 1
         else:
             tail = int(game["id"])
-
+#now move to the deliveries file and then check if it is in range get the bowler details other wise no need to get.
 
 file1 = open("deliveries.csv")
 deliveries = csv.DictReader(file1)
@@ -34,13 +38,13 @@ for match in deliveries:
         if ball == '1':
             bowler_overs[bowler] = bowler_overs.get(bowler, 0) + 1
 
-
+#After the score given by each bowler is calculated then find the economy rates of each player
 economy_rates = {}
 for bowler_name in bowler_overs.keys():
     eco = str(bowler_runs[bowler_name]/bowler_overs[bowler_name])[:4]
     economy_rates[bowler_name] = eco
 
-
+#sort the economy rates by values and get top 10
 sorted_economy_rates = dict(sorted(economy_rates.items(), key=lambda item: float(item[1])))
 cnt = 1
 top10 = {}

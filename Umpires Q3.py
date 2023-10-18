@@ -6,6 +6,8 @@ umpires = csv.DictReader(file)
 umpire_country = {}
 for person in umpires:
     country = person[" country"]
+
+    #get the umpires country and then compare it with india if it is not india then only we will proceed further
     if country != " India":
         umpire_country[country] = umpire_country.get(country,0)+1
     

@@ -7,6 +7,7 @@ teams = {}
 for match in delivery:
     year = match["season"]
     winner = match["winner"]
+    
     if year not in teams:
         teams[year] = {}
 
